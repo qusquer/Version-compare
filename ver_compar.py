@@ -8,7 +8,7 @@ def ver_compare(ver1, ver2):
     
     for i in (ver1 + ver2):
         if not(i.isdigit()):
-            raise ValueError("a string can't contain anything other than numbers and a dot")
+            raise ValueError("ver can't contain anything other than numbers and a dot")
     
     ver1 = [int(x) for x in ver1]
     ver2 = [int(x) for x in ver2]
