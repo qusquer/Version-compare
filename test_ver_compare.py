@@ -14,5 +14,5 @@ class TestVerCompare(unittest.TestCase):
     
     #def test_values(self):
         #self.assertRaises(ValueError,)
-    if __name__ == '__name__':
-        unittest.main()
+if __name__ == '__name__':
+    unittest.main()
