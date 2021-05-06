@@ -19,7 +19,7 @@ class TestVerCompare(unittest.TestCase):
         self.assertRaises(ValueError, ver_compare, ('0.32o.0', '3.324.5.6.o'))
 
     def test_types(self):
-        self.assertRaises(TypeError, ver_compare, ((0.32.0), '3.324.5.6'))
+        self.assertRaises(TypeError, ver_compare, (32, '3.324.5.6'))
         self.assertRaises(TypeError, ver_compare, ('0.32.0', [3, 324, 5, 6]))
         self.assertRaises(TypeError, ver_compare, (True, '3.324.5.6'))
         self.assertRaises(TypeError, ver_compare, ((5 + 2j), '3.324.5.6'))
