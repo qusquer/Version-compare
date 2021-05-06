@@ -1,7 +1,7 @@
 import unittest
 from ver_compar import ver_compare
 
-class Test_VerCompare(unittest.TestCase):
+class TestVerCompare(unittest.TestCase):
 
     def test_accuracy(self):
         self.assertEqual(ver_compare('1.2', '1.3'), -1)
