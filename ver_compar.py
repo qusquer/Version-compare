@@ -3,6 +3,9 @@ def ver_compare(ver1, ver2):
     if not(isinstance(ver1, str) and isinstance(ver2, str)): 
         raise TypeError('ver must be str')
 
+    if ver1 == '' or ver2 == '':
+        raise ValueError('ver must contain at least one number')
+
     ver1 = ver1.split('.')
     ver2 = ver2.split('.')
     

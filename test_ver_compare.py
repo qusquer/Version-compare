@@ -13,17 +13,17 @@ class TestVerCompare(unittest.TestCase):
         self.assertEqual(ver_compare('12423534.4352.12.0097.42.07.0', '5463.007.3.1'), 1)
 
     def test_values(self):
-        self.assertRaises(ValueError, ver_compare, ('0.32f.0', '3.324.5.6'))
-        self.assertRaises(ValueError, ver_compare, ('0.32f.0', '3.yt4.5.l'))
-        self.assertRaises(ValueError, ver_compare, ('5456.46.4', 'fgf'))
-        self.assertRaises(ValueError, ver_compare, ('0.32o.0', '3.324.5.6.o'))
-        self.assertRaises(ValueError, ver_compare, ('0.32.0', ''))
+        self.assertRaises(ValueError, ver_compare, '0.32f.0', '3.324.5.6')
+        self.assertRaises(ValueError, ver_compare, '0.32f.0', '3.yt4.5.l')
+        self.assertRaises(ValueError, ver_compare, '5456.46.4', 'fgf')
+        self.assertRaises(ValueError, ver_compare, '0.32o.0', '3.324.5.6.o')
+        self.assertRaises(ValueError, ver_compare, '0.32.0', '')
 
     def test_types(self):
-        self.assertRaises(TypeError, ver_compare, (32, '3.324.5.6'))
-        self.assertRaises(TypeError, ver_compare, ('0.32.0', [3, 324, 5, 6]))
-        self.assertRaises(TypeError, ver_compare, (True, '3.324.5.6'))
-        self.assertRaises(TypeError, ver_compare, ((5 + 2j), '3.324.5.6'))
+        self.assertRaises(TypeError, ver_compare, 32, '3.324.5.6')
+        self.assertRaises(TypeError, ver_compare, '0.32.0', [3, 324, 5, 6])
+        self.assertRaises(TypeError, ver_compare, True, '3.324.5.6')
+        self.assertRaises(TypeError, ver_compare, (5 + 2j), '3.324.5.6')
         
 if __name__ == '__name__':
     unittest.main()
