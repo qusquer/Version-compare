@@ -11,12 +11,13 @@ class TestVerCompare(unittest.TestCase):
         self.assertEqual(ver_compare('1.020.00.01', '1.20.0.1'), 0)
         self.assertEqual(ver_compare('3462', '1.3'), 1)
         self.assertEqual(ver_compare('12423534.4352.12.0097.42.07.0', '5463.007.3.1'), 1)
-    
+
     def test_values(self):
         self.assertRaises(ValueError, ver_compare, ('0.32f.0', '3.324.5.6'))
         self.assertRaises(ValueError, ver_compare, ('0.32f.0', '3.yt4.5.l'))
         self.assertRaises(ValueError, ver_compare, ('5456.46.4', 'fgf'))
         self.assertRaises(ValueError, ver_compare, ('0.32o.0', '3.324.5.6.o'))
+        self.assertRaises(ValueError, ver_compare, ('0.32.0', ''))
 
     def test_types(self):
         self.assertRaises(TypeError, ver_compare, (32, '3.324.5.6'))
